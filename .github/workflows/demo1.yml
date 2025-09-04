@@ -1,26 +1,10 @@
-<<<<<<< HEAD
-name: My First workflow
-on: push
-
-=======
 name: My First Workflow
 on: push
  
->>>>>>> e6e465aa4fe87d26aa62625301d42f99440cced4
 jobs:
   first_job:
     runs-on: ubuntu-latest
     steps:
-<<<<<<< HEAD
-      - name: actions/checkout@v4
-       run: welcome message
-      - name: List files
-       run: ls
-      - name: Make script executable
-       run: chmod x heelo.sh
-      - name: Execute shell script
-       run: ./hello.sh
-=======
       - uses: actions/checkout@v4
       - name: welcome message
         run: echo "my first Github action Job"
@@ -30,4 +14,3 @@ jobs:
         run: chmod +x hello.sh
       - name: run Hello
         run: ./hello.sh
->>>>>>> e6e465aa4fe87d26aa62625301d42f99440cced4

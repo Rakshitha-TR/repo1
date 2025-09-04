@@ -1,0 +1,9 @@
+jobs:
+    deploy:
+        timeout-minutes: 5
+        runs-on: ubantu-latest
+        steps:
+            - name: Step A
+                run: sleep 300s
+            - name: Step B
+                run: sleep 300s

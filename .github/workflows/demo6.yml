@@ -15,10 +15,4 @@ jobs:
         env:
           stepVar1: stepvalue1
         run: |
-          echo "The value for stepvar1: $stepVar1" ${{ REPOVAR1}}
-
-    deploy:
-        needs: docker
-        concurrency:
-            group: production-deployment
-            cancel-in-progress: ture
+          echo "The value for stepvar1: $stepVar1"
