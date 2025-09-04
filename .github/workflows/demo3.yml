@@ -1,0 +1,14 @@
+jobs:
+  ascii_job:
+    runs-on: ubantu-latest
+    steps:
+      - name: Checkout Repository
+        users: actions/checkout@v4
+
+      - name: List checkout files
+        users: ls -ltra
+
+      - name: Run ASCII Art Script
+        run: |
+          chmod +x ascii-script.sh
+          ./ascii-script.sh
