@@ -12,13 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 <<<<<<< HEAD
-      -name actions/checkout@v4
+      - name: actions/checkout@v4
        run: welcome message
-      -name: List files
+      - name: List files
        run: ls
-      -name: Make script executable
+      - name: Make script executable
        run: chmod x heelo.sh
-      -name: Execute shell script
+      - name: Execute shell script
        run: ./hello.sh
 =======
       - uses: actions/checkout@v4
