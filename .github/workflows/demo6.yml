@@ -6,7 +6,7 @@ on:
       description: "Log level"
       requested: true
       default: 'warning'
-      
+
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -16,3 +16,9 @@ jobs:
           stepVar1: stepvalue1
         run: |
           echo "The value for stepvar1: $stepVar1" ${{ REPOVAR1}}
+
+    deploy:
+        needs: docker
+        concurrency:
+            group: production-deployment
+            cancel-in-progress: ture
