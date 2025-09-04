@@ -6,7 +6,7 @@ on:
 
 jobs:
   first_job:
-    runs-on: self-hosted
+    runs-on: sel
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
