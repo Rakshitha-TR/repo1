@@ -1,0 +1,33 @@
+name: Reusable Workflow
+
+
+on:
+  workflow_call:
+    inputs:
+      message:
+        description: "Text to echo"
+        required: false
+        type: string
+    secrets:
+      MY_SECRET:
+        required: true
+
+
+jobs:
+  echo-job:
+    runs-on: self-hosted
+    steps:
+      - name: Show inputs and secrets
+        run: |
+          echo "Msg: ${{ inputs.message }}"
+          echo "Secret: ${{ secrets.MY_SECRET }}"
+		  
+
+
+jobs:
+  call-reusable:
+    uses: owner/repo/.github/workflows/reusable.yml@main
+    with:
+      message: "Hello from parent"
+    secrets:
+      MY_SECRET: ${{ secrets.MY_SECRET }}
