@@ -1,0 +1,17 @@
+name: My First Workflow
+on: push
+ 
+jobs:
+  first_job:
+  if: github.run_attempt 1
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+      - name: welcome message
+        run: echo "my first Github action Job"
+      - name: list files
+        run: ls  
+      - name: make script executable;e
+        run: chmod +x hello.sh
+      - name: run Hello
+        run: ./hello.sh
